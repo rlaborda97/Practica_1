@@ -5,7 +5,7 @@ class LaligaSpider(scrapy.Spider):
     name = 'laliga'
     allowed_domains = ['www.laliga.com/']
     start_urls = ['https://www.laliga.com/estadisticas/']
-    # Para probar ejecutar: scrapy crawl laliga
+    # Para probar ejecutar: "scrapy crawl laliga".
     def parse(self, response):
         rows = response.xpath("//tr")
 
