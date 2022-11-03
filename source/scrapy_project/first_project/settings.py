@@ -1,24 +1,22 @@
-# Scrapy settings for scrapy_project project
-#
-# For simplicity, this file contains only settings considered important or
-# commonly used. You can find more settings consulting the documentation:
-#
-#     https://docs.scrapy.org/en/latest/topics/settings.html
-#     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
-#     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
-
+# Definición de los parámetros generales del proyecto.
 BOT_NAME = 'habitaclia'
-
 SPIDER_MODULES = ['first_project.spiders']
 NEWSPIDER_MODULE = 'first_project.spiders'
 
-#CSV IMPORTACION
-ITEM_PIPELINES = {'first_project.pipelines.HousesPipeline': 500,}
+# Definición de los Pipelines que se van a utilizar y su nivel de importancia.
+ITEM_PIPELINES = {'first_project.pipelines.HousesPipeline': 500,
+                  'first_project.pipelines.HousesImagesPipeline': 1}
 
-# Crawl responsibly by identifying yourself (and your website) on the user-agent
+# Definición de la ruta en la cual se almacenarán las imágenes del Pipeline "HousesImagesPipeline".
+IMAGES_STORE = '../../../dataset/imagenes'
+
+# Definición del delay entre descargas para que la página web no detecte que somos un bot.
+#DOWNLOAD_DELAY = 2
+
+# Definición del USER_AGENT a utilizar para que no se nos detecte como scrapers.
 USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36'
 
-# Obey robots.txt rules
+# Obligación de respetar las políticas impuestas en el fichero "robots.txt"
 ROBOTSTXT_OBEY = True
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)

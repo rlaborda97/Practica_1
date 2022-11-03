@@ -1,14 +1,8 @@
-# Define here the models for your scraped items
-#
-# See documentation in:
-# https://docs.scrapy.org/en/latest/topics/items.html
-
 import scrapy
 
-
+# Definición de la clase "CasaItem" con los campos en los cuales se almacenará la información extraida.
 class CasaItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
+    # Información de las viviendas.
     name = scrapy.Field()
     price = scrapy.Field()
     summary = scrapy.Field()
@@ -17,3 +11,8 @@ class CasaItem(scrapy.Item):
     last_modified = scrapy.Field()
     distribution = scrapy.Field()
     general_characteristics = scrapy.Field()
+    # Información de las imágenes.
+    image_urls = scrapy.Field()
+    saved_path = scrapy.Field()
+    image_names = scrapy.Field()
+    folder1 = scrapy.Field()
