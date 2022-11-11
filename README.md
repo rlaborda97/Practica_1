@@ -1,5 +1,5 @@
 ## Máster Universitario de Ciencia de datos. Asignatura: [Tipologia y ciclo de vida de los datos](http://cv.uoc.edu/tren/trenacc/web/GAT_EXP.PLANDOCENTE?any_academico=20222&cod_asignatura=M2.851&idioma=CAS&pagina=PD_PREV_PORTAL&cache=S). Práctica 1. Noviembre 2022.
-[texto a mostrar](url completa)
+
 # Web Scraping
 ***
 
@@ -27,4 +27,5 @@ Scrapy es una herramienta de extración de datos de Python de código abierto qu
 4. Escribir el siguiente código para ejecutar la araña web habitaclia que se encuentra dentro de la carpeta spiders  
 `C:...\source\scrapy_project> scrapy crawl habitaclia`  
 5. Revisar que la información quedará guardada en el directorio del paso 3. Archivo habitaclia_houses.csv
-## 4. [Licencia](#Licencia)
+## 4. [Licencia](#Licencia) 
+GNU GPLv3 
