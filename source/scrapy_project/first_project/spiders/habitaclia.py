@@ -1,10 +1,16 @@
+# Realizar los imports necesarios.
 import scrapy
 from scrapy.spiders import CrawlSpider, Rule
 from scrapy.linkextractors import LinkExtractor
 from scrapy.exceptions import CloseSpider
-from ..items import CasaItem
+from scrapy.crawler import CrawlerProcess
+from scrapy.utils.project import get_project_settings
 import re
 import uuid
+# Acceder a la clase CasaItem.
+import sys
+sys.path.append(sys.path[0] + '/..')
+from items import CasaItem
 
 class habitacliaSpider(CrawlSpider):
 
@@ -86,5 +92,9 @@ class habitacliaSpider(CrawlSpider):
         casa['saved_path'] = self.get_name(response.xpath('//section[@id="js-gallery"]/div[2]/div/a/img/@src').extract(), type="saved_path")
         yield casa
 
+# Ejecutar la spyder.
+process = CrawlerProcess(get_project_settings())
+process
+process.crawl(habitacliaSpider)
+process.start()
     
-   
